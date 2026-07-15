@@ -1,4 +1,3 @@
-```javascript
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -28,19 +27,5 @@ export const getUserSessions = async (userId) => {
     .select('*')
     .eq('user_id', userId)
     .order('created_at', { ascending: false })
-  return { data, error }
-}
-
-export const getTodaySessions = async (userId) => {
-  const today = new Date()
-  today.setHours(0, 0, 0, 0)
-  
-  const { data, error } = await supabase
-    .from('pomodoro_sessions')
-    .select('*')
-    .eq('user_id', userId)
-    .gte('created_at', today.toISOString())
-    .order('created_at', { ascending: false })
-  
   return { data, error }
 }
