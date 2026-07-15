@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { supabase } from '@/lib/supabase'
+import { supabase } from '../lib/supabase'
 
 export const usePomodoroStore = create((set, get) => ({
   sessions: [],
@@ -20,14 +20,14 @@ export const usePomodoroStore = create((set, get) => ({
   loadTodaySessions: async (userId) => {
     const today = new Date()
     today.setHours(0, 0, 0, 0)
-    
+
     const { data } = await supabase
       .from('pomodoro_sessions')
       .select('*')
       .eq('user_id', userId)
       .gte('created_at', today.toISOString())
       .order('created_at', { ascending: false })
-    
+
     set({ todaySessions: data || [] })
   },
 
@@ -35,7 +35,7 @@ export const usePomodoroStore = create((set, get) => ({
     const { data, error } = await supabase
       .from('pomodoro_sessions')
       .insert([{ user_id: userId, duration, completed: true }])
-    
+
     if (!error) {
       const { sessions } = get()
       set({ sessions: [data[0], ...sessions] })
