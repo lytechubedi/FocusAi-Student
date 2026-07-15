@@ -1,13 +1,13 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useAuthStore } from '@/store/authStore'
-import { usePomodoroStore } from '@/store/pomodoroStore'
-import Timer from '@/components/Timer'
-import Login from '@/components/Login'
-import Navigation from '@/components/Navigation'
-import StatsView from '@/components/StatsView'
-import AICoach from '@/components/AICoach'
+import { useAuthStore } from '../store/authStore'
+import { usePomodoroStore } from '../store/pomodoroStore'
+import Timer from '../components/Timer'
+import Login from '../components/Login'
+import Navigation from '../components/Navigation'
+import StatsView from '../components/StatsView'
+import AICoach from '../components/AICoach'
 
 export default function Home() {
   const [activeView, setActiveView] = useState('timer')
