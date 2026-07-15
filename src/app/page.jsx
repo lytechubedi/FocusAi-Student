@@ -1,5 +1,9 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+
+import { useEffect, useState } from 'react'
+
 import { useEffect, useState } from 'react'
 import { useAuthStore } from '../store/authStore'
 import { usePomodoroStore } from '../store/pomodoroStore'
