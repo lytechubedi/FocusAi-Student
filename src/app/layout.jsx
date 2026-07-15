@@ -1,7 +1,6 @@
-import type { Metadata } from 'next'
 import './globals.css'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'FocusAI - Study Smarter for African Students',
   description: 'Modern Pomodoro timer with AI coaching for productive studying. Free app built for African students.',
   keywords: 'pomodoro, productivity, study, timer, african students, focus',
@@ -11,19 +10,11 @@ export const metadata: Metadata = {
     description: 'Pomodoro app with AI coaching for African students',
     url: 'https://focusai.vercel.app',
     siteName: 'FocusAI',
-    images: [
-      {
-        url: 'https://focusai.vercel.app/og-image.png',
-        width: 1200,
-        height: 630,
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'FocusAI - Study Smarter',
     description: 'Pomodoro app for African students',
-    images: ['https://focusai.vercel.app/og-image.png'],
   },
 }
 
