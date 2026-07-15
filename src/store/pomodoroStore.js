@@ -35,6 +35,7 @@ export const usePomodoroStore = create((set, get) => ({
     const { data, error } = await supabase
       .from('pomodoro_sessions')
       .insert([{ user_id: userId, duration, completed: true }])
+      .select()
 
     if (!error) {
       const { sessions } = get()
